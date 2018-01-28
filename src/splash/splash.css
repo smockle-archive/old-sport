@@ -1,0 +1,50 @@
+.splash {
+  background-color: #333;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  text-align: center;
+}
+
+.splash-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.splash-header {
+  padding: 20px;
+}
+
+.splash-title {
+  font-size: 2em;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.splash-divider {
+  background-color: #888;
+  border: 0;
+  height: 1px;
+  width: 80vw;
+}
+
+.splash-intro {
+  font-size: large;
+  font-family: serif;
+}
+
+.splash-link {
+  color: #b48f49;
+  text-decoration: none;
+}
+
+@keyframes splash-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
