@@ -10,10 +10,10 @@ import { Ingredients } from "./ingredients/ingredients";
 
 ReactDOM.render(
   <BrowserRouter>
-    <React.Fragment>
-      <Route exact path="/" component={Splash} />
+    <Route exact path="/" component={({ children = null }) => children}>
+      <Route path="/splash" component={Splash} />
       <Route path="/ingedients" component={Ingredients} />
-    </React.Fragment>
+    </Route>
   </BrowserRouter>,
   document.getElementById("root")
 );
