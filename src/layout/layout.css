@@ -1,0 +1,49 @@
+:root {
+  --size-bar: 50px;
+}
+
+.layout-bar {
+  background-color: var(--color-black);
+  display: flex;
+  height: var(--size-bar);
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  z-index: 1;
+}
+
+.layout-header {
+  /* composes: .layout-bar */
+  top: 0;
+}
+
+.layout-footer {
+  /* composes: .layout-bar */
+  bottom: 0;
+}
+
+.layout-body {
+  position: relative;
+  margin: var(--size-bar) 0;
+}
+
+.layout-typographical {
+  color: white;
+  font-size: 1em;
+  margin: 0;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+.layout-title {
+  /* composes: .layout-typographical */
+  font-family: serif;
+  font-weight: normal;
+  letter-spacing: 0.3em;
+}
+
+.layout-link {
+  /* composes: .layout-typographical */
+  font-weight: normal;
+  text-decoration: none;
+}
