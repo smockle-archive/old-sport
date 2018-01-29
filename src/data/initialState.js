@@ -1,4 +1,7 @@
 export const initialState = {
+  ui: {
+    availability: {}
+  },
   entities: {
     ingredients: {
       byId: {
