@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Route } from "react-router";
+import { Route, Switch } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import registerServiceWorker from "./registerServiceWorker";
@@ -10,10 +10,10 @@ import { Ingredients } from "./ingredients/ingredients";
 
 ReactDOM.render(
   <BrowserRouter>
-    <Route exact path="/" component={({ children = null }) => children}>
-      <Route path="/splash" component={Splash} />
-      <Route path="/ingedients" component={Ingredients} />
-    </Route>
+    <Switch>
+      <Route exact path="/" component={Splash} />
+      <Route path="/ingredients" component={Ingredients} />
+    </Switch>
   </BrowserRouter>,
   document.getElementById("root")
 );
