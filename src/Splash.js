@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "./logo.svg";
-import styles from "./splash.css";
+import styles from "./Splash.css";
 
 export const Splash = () => (
   <div className={styles.splash}>

@@ -1,0 +1,7 @@
+:local(.divider) {
+  background-color: var(--color-litegray);
+  border: 0;
+  height: 1px;
+  margin: 0 auto;
+  width: calc(100vw - 20px); /* 2x left-right padding */
+}

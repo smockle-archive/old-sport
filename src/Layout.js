@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
-import styles from "./layout.css";
+import styles from "./Layout.css";
 
 export const Layout = withRouter(
   class Layout extends React.Component {

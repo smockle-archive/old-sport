@@ -5,21 +5,29 @@ import { BrowserRouter, Switch } from "react-router-dom";
 import "./index.css";
 import registerServiceWorker from "./registerServiceWorker";
 // Routeable components
-import { Layout } from "./layout/layout";
-import { Splash } from "./splash/splash";
-import { Recipes } from "./recipes/recipes";
-import { Ingredients } from "./ingredients/ingredients";
+import { Layout } from "./Layout";
+import { Splash } from "./Splash";
+import { Recipes } from "./Recipes";
+import { Ingredients } from "./Ingredients";
+
+import { rootReducer } from "./data/reducers";
+import { initialState } from "./data/initialState";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+const store = createStore(rootReducer, initialState);
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Switch>
-      <Route exact path="/" component={Splash} />
-      <Layout>
-        <Route path="/recipes" component={Recipes} />
-        <Route path="/ingredients" component={Ingredients} />
-      </Layout>
-    </Switch>
-  </BrowserRouter>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={Splash} />
+        <Layout>
+          <Route path="/recipes" component={Recipes} />
+          <Route path="/ingredients" component={Ingredients} />
+        </Layout>
+      </Switch>
+    </BrowserRouter>
+  </Provider>,
   document.getElementById("root")
 );
 registerServiceWorker();

@@ -1,0 +1,6 @@
+:local(.ingredient) {
+  display: flex;
+  font-family: serif;
+  justify-content: space-between;
+  padding: 10px;
+}
