@@ -1,19 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "./logo.svg";
-import "./splash.css";
+import styles from "./splash.css";
 
 export const Splash = () => (
-  <div className="splash">
-    <header className="splash-header">
-      <img src={logo} className="splash-logo" alt="logo" />
-      <h1 className="splash-title">Greetings, Old Sport!</h1>
+  <div className={styles.splash}>
+    <header className={styles["splash-header"]}>
+      <img src={logo} className={styles["splash-logo"]} alt="logo" />
+      <h1 className={styles["splash-title"]}>Greetings, Old Sport!</h1>
     </header>
-    <hr className="splash-divider" />
-    <p className="splash-intro">
+    <hr className={styles["splash-divider"]} />
+    <p className={styles["splash-intro"]}>
       To get started, simply tell us what ingredients you have.
     </p>
-    <Link className="splash-link" to="/ingredients">
+    <Link className={styles["splash-link"]} to="/ingredients">
       Add Ingredients
     </Link>
   </div>

@@ -1,2 +1,2 @@
-import "./recipes.css";
+import styles from "./recipes.css";
 export const Recipes = () => null;

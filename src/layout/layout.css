@@ -2,7 +2,7 @@
   --size-bar: 50px;
 }
 
-.layout-bar {
+:local(.layout-bar) {
   background-color: var(--color-black);
   display: flex;
   height: var(--size-bar);
@@ -12,22 +12,22 @@
   z-index: 1;
 }
 
-.layout-header {
-  /* composes: .layout-bar */
+:local(.layout-header) {
+  composes: layout-bar;
   top: 0;
 }
 
-.layout-footer {
-  /* composes: .layout-bar */
+:local(.layout-footer) {
+  composes: layout-bar;
   bottom: 0;
 }
 
-.layout-body {
+:local(.layout-body) {
   position: relative;
   margin: var(--size-bar) 0;
 }
 
-.layout-typographical {
+:local(.layout-typographical) {
   color: white;
   font-size: 1em;
   margin: 0;
@@ -35,15 +35,15 @@
   text-transform: uppercase;
 }
 
-.layout-title {
-  /* composes: .layout-typographical */
+:local(.layout-title) {
+  composes: layout-typographical;
   font-family: serif;
   font-weight: normal;
   letter-spacing: 0.3em;
 }
 
-.layout-link {
-  /* composes: .layout-typographical */
+:local(.layout-link) {
+  composes: layout-typographical;
   font-weight: normal;
   text-decoration: none;
 }
