@@ -1,6 +1,7 @@
 import React from "react";
+import "./ingredients.css";
 
-const ingredients = [
+const raw = [
   { category: "produce", name: "Blackberries" },
   { category: "produce", name: "Cherry (Luxardo)" },
   { category: "produce", name: "Ginger" },
@@ -59,11 +60,40 @@ const ingredients = [
   { category: "syrups", name: "Honey Syrup" },
   { category: "syrups", name: "Maple Syrup" }
 ];
+const ingredients = raw.reduce((ingredients, ingredient) => {
+  if (!Object.keys(ingredients).includes(ingredient.category)) {
+    ingredients[ingredient.category] = [ingredient.name];
+  } else if (!ingredients[ingredient.category].includes(ingredient.name)) {
+    ingredients[ingredient.category].push(ingredient.name);
+  }
+  return ingredients;
+}, {});
 
 export const Ingredients = () => (
   <div className="ingredients">
     <header className="ingredients-header">
       <h1 className="ingredients-title">Ingredients</h1>
     </header>
+    <input
+      className="ingredients-search"
+      placeholder="Search ingredients"
+      aria-label="Search ingredients"
+      type="search"
+    />
+    {Object.keys(ingredients).map(category => (
+      <div className="category" key={category}>
+        <h2 className="category-title">{category}</h2>
+        <ul className="category-ingredients">
+          {ingredients[category].map((ingredient, index) => (
+            <React.Fragment>
+              <li className="category-ingredient">{ingredient}</li>
+              {index !== ingredients[category].length - 1 && (
+                <hr className="category-ingredient-divider" />
+              )}
+            </React.Fragment>
+          ))}
+        </ul>
+      </div>
+    ))}
   </div>
 );
